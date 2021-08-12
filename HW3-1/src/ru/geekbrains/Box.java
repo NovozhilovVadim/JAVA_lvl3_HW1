@@ -22,6 +22,7 @@ public class Box<T extends Fruit> {//обобщёный клас коробка,
 //    public ArrayList<T> getItems() {
 //        return new ArrayList<T>(box);
 //    }
+    //.
 
     public void clear() {//очищаем массив
         box.clear();

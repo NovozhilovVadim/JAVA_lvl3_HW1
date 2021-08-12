@@ -7,3 +7,4 @@ public class Orange extends Fruit {
         super(1.5f);
     }
 }
+//.

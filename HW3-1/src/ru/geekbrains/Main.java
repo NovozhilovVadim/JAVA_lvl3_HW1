@@ -33,7 +33,7 @@ g. Не забываем про метод добавления фрукта в 
             System.out.println(o);
         }
         Object[] objects = arrayList.toArray();
-        task1(objects);//меняем местами
+        task1(objects, 0,1);//меняем местами
         System.out.println("Array swap");
         for (Object o : objects) {
             System.out.println(o);
@@ -70,10 +70,10 @@ g. Не забываем про метод добавления фрукта в 
         box2.transfer(box3);//перекладываем фрукты
     }
 
-    public static void task1(Object[] arrayList){
+    public static void task1(Object[] arrayList, int i, int j){// принимаем на вход arraylist и номера ячеек для замены
         ArrayList tmp = new ArrayList();//временный список
-        tmp.add(arrayList[1]);// берём вторую ячейку массива и пишем под индексом 0 в tmp
-        arrayList[1] = arrayList [0];
-        arrayList[0] = tmp.get(0);//возвращаем обратно в массив
+        tmp.add(i, arrayList[j]);// берём вторую ячейку массива и пишем под индексом 0 в tmp
+        arrayList[j] = arrayList [i];
+        arrayList[i] = tmp.get(i);//возвращаем обратно в массив
     }
 }

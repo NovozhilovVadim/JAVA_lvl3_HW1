@@ -2,7 +2,7 @@ package ru.geekbrains;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Box<T extends Fruit> {//обопщёный клас коробка, ограниченный классом fruit
+public class Box<T extends Fruit> {//обобщёный клас коробка, ограниченный классом fruit
     private ArrayList<T> box;//объявляем массив
 
     public Box(T... items) {//Конструктор класса создаёт экземпляр массива
@@ -19,9 +19,9 @@ public class Box<T extends Fruit> {//обопщёный клас коробка,
         System.out.println("remove passed");
     }
 
-    public ArrayList<T> getItems() {
-        return new ArrayList<T>(box);
-    }
+//    public ArrayList<T> getItems() {
+//        return new ArrayList<T>(box);
+//    }
 
     public void clear() {//очищаем массив
         box.clear();
@@ -41,7 +41,8 @@ public class Box<T extends Fruit> {//обопщёный клас коробка,
 
     public boolean compare(Box box) {//сравниваем вес массивов
         System.out.println("weight boxes:\n" + this.getWeight() + "\n" + box.getWeight());
-        return this.getWeight() == box.getWeight();
+        return Math.abs(this.getWeight() - box.getWeight()) < 0.0001;//предотвращаем ошибку при округлении..
+//        return this.getWeight() == box.getWeight();
     }
 
     public void transfer(Box<? super T> box) {//перекладываем фрукты в новый массив
